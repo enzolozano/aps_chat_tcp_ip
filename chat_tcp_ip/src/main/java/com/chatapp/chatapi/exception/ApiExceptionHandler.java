@@ -14,13 +14,7 @@ public class ApiExceptionHandler {
     
     @ExceptionHandler(value = {Exception.class})
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    public ErrorDetails exception(Exception ex, WebRequest request) {
-        return new ErrorDetails(ex.getMessage(), request.getDescription(false));
-    }
-
-    @ExceptionHandler(value = {ResourceNotFoundException.class})
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public ErrorDetails resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) { 
-        return new ErrorDetails(ex.getMessage(), request.getDescription(false));
+    public ErrorDetails exception(Exception e, WebRequest request) {
+        return new ErrorDetails(e.getMessage(), request.getDescription(false));
     }
 }
