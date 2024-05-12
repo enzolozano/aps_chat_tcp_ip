@@ -13,11 +13,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Message {
+public class Message { // Modelo recebido pela requisição com informações necessárias para mensagem
     
-    private String senderName;
-    private String receiverName;
-    private String message;
-    private String date;
-    private Status status;
+    private String senderName; // Usuário que enviou a mensagem
+    private String receiverName; // Usuário que irá receber a mensagem
+    private String message; // Mensagem
+    private String date; // Data da mensagem
+    private Status status; // Status usado no Enumerator próprio ('JOIN', 'MESSAGE', 'LEAVE')
 }
